@@ -8,6 +8,7 @@ import (
 var PORT = ":3000"
 
 func doStuff(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprint(w, "Waffles are great")
 }
 
