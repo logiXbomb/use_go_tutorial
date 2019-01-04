@@ -8,7 +8,7 @@ import (
 var PORT = ":3000"
 
 func doStuff(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Waffles are the best")
+	fmt.Fprint(w, "Waffles are great")
 }
 
 func main() {
