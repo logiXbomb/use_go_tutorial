@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
+
+var PORT = ":3000"
+
+func doStuff(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Waffles are the best")
+}
 
 func main() {
-	fmt.Println("Waffles, are great")
+	http.HandleFunc("/", doStuff)
+	fmt.Printf("Listening on port %s\n", PORT)
+	http.ListenAndServe(PORT, nil)
 }
